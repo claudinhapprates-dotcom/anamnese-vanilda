@@ -1698,21 +1698,14 @@ input:focus,select:focus,textarea:focus{
 </style>
 
 
-<style id="vanilda-v2-clean-flow">
-.section-intro{
-  margin:0 0 28px;
-  max-width:760px;
-  color:#61706F;
-  font-size:1rem;
-  line-height:1.7;
-}
+<style id="vanilda-v2-flow-fix">
 .journey-hero{
-  transition:opacity .35s ease, transform .35s ease, max-height .35s ease, padding .35s ease;
   overflow:hidden;
+  transition:opacity .35s ease, transform .35s ease, max-height .35s ease, padding .35s ease;
 }
 body.journey-started .journey-hero{
   opacity:0;
-  transform:translateY(-12px);
+  transform:translateY(-10px);
   max-height:0!important;
   padding-top:0!important;
   padding-bottom:0!important;
@@ -1723,21 +1716,13 @@ body.journey-started main{
   padding-top:24px!important;
 }
 @media(max-width:720px){
-  .section-intro{
-    margin-bottom:22px;
-    font-size:.96rem;
-  }
-  body.journey-started main{
-    padding-top:14px!important;
-  }
+  body.journey-started main{padding-top:14px!important}
 }
 @media(prefers-reduced-motion:reduce){
   .journey-hero{transition:none}
 }
 @media print{
-  body.journey-started .journey-hero{
-    display:none!important;
-  }
+  body.journey-started .journey-hero{display:none!important}
 }
 </style>
 
@@ -1745,13 +1730,70 @@ body.journey-started main{
 <body class="welcome-open">
 
 <section class="welcome-screen no-print" id="welcomeScreen" aria-labelledby="welcomeTitle">
+  <div class="welcome-card">
+    <img src="logo-vanilda.png" class="welcome-logo" alt="Vanilda Ferreira — Terapeuta em Reprocessamento Generativo">
+    <div class="welcome-kicker">Conhecendo sua história</div>
+    <h1 id="welcomeTitle">Seja bem-vindo(a)</h1>
+
+    <div class="welcome-copy">
+      <p>É uma alegria receber você aqui.</p>
+      <p>Antes do nosso primeiro encontro, preparei esta anamnese para conhecer um pouco da sua história, compreender o momento que está vivendo e identificar aquilo que deseja transformar em sua vida.</p>
+      <p>Cada pessoa é única. Suas respostas serão um importante ponto de partida para que nosso atendimento seja conduzido com mais sensibilidade, respeito e direcionamento.</p>
+      <p>Reserve alguns minutos, encontre um lugar tranquilo e responda com sinceridade. Não existe julgamento, apenas o desejo de compreender você com mais profundidade.</p>
+    </div>
+
+    <div class="welcome-facts" aria-label="Informações sobre o preenchimento">
+      <div class="welcome-fact">
+        <span aria-hidden="true">◷</span>
+        <strong>Tempo aproximado</strong>
+        <small>10 a 15 minutos</small>
+      </div>
+      <div class="welcome-fact">
+        <span aria-hidden="true">◇</span>
+        <strong>Jornada guiada</strong>
+        <small>Etapas organizadas</small>
+      </div>
+      <div class="welcome-fact">
+        <span aria-hidden="true">⌾</span>
+        <strong>Seu próprio ritmo</strong>
+        <small>Respostas salvas neste aparelho</small>
+      </div>
+    </div>
+
+    <div class="welcome-privacy">
+      <strong>Confidencialidade:</strong> todas as informações são protegidas pelo sigilo profissional e utilizadas exclusivamente no contexto do atendimento terapêutico.
+    </div>
+
+    <button type="button" class="start-button" id="startAnamnese">Iniciar minha jornada</button>
+    <small class="welcome-note">Você poderá avançar e retornar entre as etapas com tranquilidade.</small>
+  </div>
 </section>
+
+
+
+<header class="hero hero-brand-first journey-hero">
+  <div class="hero-inner brand-first-inner">
+    <div class="brand-panel brand-first-panel">
+      <img class="brand-logo brand-first-logo" src="logo-vanilda-branca.png" alt="Vanilda Ferreira — Terapeuta em Reprocessamento Generativo">
+    </div><div class="hero-copy brand-first-copy">
+      <div class="eyebrow">JORNADA DA DESCOBERTA</div>
+      <h1>ANAMNESE</h1>
+      <div class="form-subtitle">Questionário inicial</div>
+    </div>
+  </div>
+</header>
+<main>
+<div class="app-shell">
+  <aside class="stage-sidebar no-print" aria-label="Etapas da anamnese">
+    <div class="sidebar-title">Etapas</div>
+    <nav id="stageNav" class="stage-nav"></nav>
+  </aside>
+  <section class="form-workspace">
 
 <form id="form">
 <section class="card active-stage">
   <h2>1. Identificação</h2>
-  <p class="section-intro">Antes de iniciarmos, preciso conhecer algumas informações básicas sobre você. Elas serão utilizadas exclusivamente no contexto do seu atendimento terapêutico.</p>
-  <p class="intro">Dados essenciais para contextualizar sua história.</p>
+  <p class="intro">Antes de iniciarmos, preciso conhecer algumas informações básicas sobre você. Elas serão utilizadas exclusivamente no contexto do seu atendimento terapêutico.</p>
   <div class="grid">
     <div><label>Nome completo</label><input name="nome" autocomplete="name"></div>
     <div><label>Como prefere ser chamado(a)?</label><input name="nome_preferido"></div>
@@ -2061,28 +2103,6 @@ window.addEventListener('beforeprint',buildPrint);
   }
 
   start.addEventListener('click', openJourney);
-})();
-</script>
-
-
-<script id="vanilda-v2-journey-state">
-(() => {
-  const key = 'vfJourneyStarted';
-  const welcome = document.getElementById('welcomeScreen');
-  const start = document.getElementById('startAnamnese');
-
-  if (sessionStorage.getItem(key) === '1') {
-    document.body.classList.remove('welcome-open');
-    document.body.classList.add('journey-started');
-    if (welcome) {
-      welcome.classList.add('is-hidden');
-      welcome.setAttribute('aria-hidden','true');
-    }
-  }
-
-  if (start) {
-    start.addEventListener('click', () => sessionStorage.setItem(key,'1'));
-  }
 })();
 </script>
 
