@@ -1632,6 +1632,71 @@ input:focus,select:focus,textarea:focus{
 }
 </style>
 
+
+<style id="vanilda-v2-navigation-fix">
+/* Correções solicitadas: navegação legível e logo nítida */
+.brand-first-logo{
+  filter:none!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+  width:min(430px,84vw)!important;
+  max-height:165px!important;
+}
+
+.stage-sidebar{
+  background:linear-gradient(180deg,#2F4F4E 0%,#233D3C 100%)!important;
+  border-radius:22px!important;
+  padding:22px 14px!important;
+  box-shadow:0 16px 38px rgba(47,79,78,.16)!important;
+  overflow:hidden;
+}
+
+.sidebar-title{
+  color:rgba(255,255,255,.72)!important;
+  margin:0 0 14px 10px!important;
+}
+
+.stage-link{
+  color:rgba(255,255,255,.78)!important;
+  border-left-color:transparent!important;
+  background:transparent!important;
+  border-radius:14px!important;
+  margin:2px 0!important;
+  padding:11px 12px!important;
+}
+
+.stage-link:hover{
+  color:#FFFFFF!important;
+  background:rgba(255,255,255,.10)!important;
+}
+
+.stage-link.active{
+  color:#2F4F4E!important;
+  background:#FFFFFF!important;
+  border-left-color:transparent!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.14)!important;
+}
+
+.stage-number{
+  color:rgba(255,255,255,.82)!important;
+  border-color:rgba(255,255,255,.38)!important;
+  background:rgba(255,255,255,.04)!important;
+}
+
+.stage-link.active .stage-number{
+  color:#2F4F4E!important;
+  border-color:#9DB0AB!important;
+  background:#F6F8F7!important;
+}
+
+@media(max-width:900px){
+  .stage-sidebar{
+    border-radius:16px!important;
+    padding:14px!important;
+  }
+}
+</style>
+
 </head>
 <body class="welcome-open">
 
@@ -1680,7 +1745,7 @@ input:focus,select:focus,textarea:focus{
 <header class="hero hero-brand-first">
   <div class="hero-inner brand-first-inner">
     <div class="brand-panel brand-first-panel">
-      <img class="brand-logo brand-first-logo" src="logo-vanilda.png" alt="Vanilda Ferreira — Terapeuta em Reprocessamento Generativo">
+      <img class="brand-logo brand-first-logo" src="logo-vanilda-branca.png" alt="Vanilda Ferreira — Terapeuta em Reprocessamento Generativo">
     </div><div class="hero-copy brand-first-copy">
       <div class="eyebrow">JORNADA DA DESCOBERTA</div>
       <h1>ANAMNESE</h1>
@@ -1706,12 +1771,6 @@ input:focus,select:focus,textarea:focus{
 
 <form id="form">
 <section class="card active-stage">
-  <h2>Jornada da descoberta</h2>
-  <p class="intro">Conhecer a própria história é um ato de coragem. Siga no seu tempo, sem cobranças. Não existem respostas certas ou erradas. Cada lembrança é uma porta. Abra a que fizer sentido hoje.</p>
-  <div class="notice small"><strong>Importante:</strong> este formulário organiza informações para a consulta, mas não substitui avaliação clínica. Resultados e tempo de tratamento variam conforme cada pessoa, sua história, seus objetivos e o método profissional utilizado.</div>
-</section>
-
-<section class="card">
   <h2>1. Identificação</h2>
   <p class="intro">Dados essenciais para contextualizar sua história.</p>
   <div class="grid">
